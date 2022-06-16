@@ -1,0 +1,124 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#hamburger{
+    cursor: pointer;
+}
+
+.active {
+    display: block !important;
+}
+
+.cat-img {
+    display: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+.sidenav{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+header{
+    margin-top: 15%;
+}
+
+header div > h1{
+    color: white;
+    font-size: 70px;
+}
+header div > a{
+  margin-top: 20px !important;
+  font-weight: bold !important;
+  text-transform: uppercase;
+  font-size: 16px !important;
+  padding: 16px 60px !important;
+}
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    background-color: #ffff;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+  }
+  
+  .sidenav a {
+    padding: 8px 8px 8px 8px;
+    position: relative;
+    bottom: 150px;
+    text-decoration: none;
+    font-size: 20px;
+    color: black;
+    display: block;
+    transition: 0.3s;
+    text-align: center;
+  }
+  
+  .sidenav a:hover {
+    color: black;
+  }
+  
+  .sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+  
+  @media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+  }
+
+
+
+  .hero{
+    padding-bottom: 510px;
+  }
+
+  .nav-item a{
+    text-transform: uppercase;
+    font-weight: bold;
+    color: rgb(90, 90, 90);
+    font-size: 18px;
+  }
+
+
+
+.fade {
+  -webkit-transition: opacity .15s linear;
+  -o-transition: opacity .15s linear;
+  transition: opacity .15s linear;
+}
+
+
+
+.btn-outline-warning{
+  padding: 8px 45px;
+  border-color: chocolate;
+  color: chocolate;
+}
+
+.btn-outline-warning:hover{
+    background-color: chocolate;
+}
+
+.ftco-footer{
+  padding-top: 50px;
+  background-color: rgb(29, 29, 29);
+  color: white;
+}
+

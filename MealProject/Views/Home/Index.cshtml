@@ -1,0 +1,486 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model MealProject.ViewModels.HomeVm
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+            crossorigin="anonymous"></script>
+    <link rel="stylesheet"
+          href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+    <link rel="stylesheet" href="~/assets/css/main.css">
+    <title>Document</title>
+</head>
+
+<body style="overflow-x:hidden;">
+    <div class="hero " id="hero"
+         style="background-repeat: no-repeat; background-size: cover;  background-image: linear-gradient(to bottom, rgb(0, 0, 0,0.4), rgba(0, 0, 0, 0.73)), url(./assets/images/xslider-1.jpg.pagespeed.ic.grltCgRAOJ.webp);">
+        <nav class="navbar sticky-top position-relative navbar-light bg-transparent justify-content-md-center align-items-center mt-3">
+            <a class="navbar-brand" href="#">
+                <i class="lab la-medium"
+                   style="font-size: 40px; border: 2px solid black; padding: 5px;"></i>
+            </a>
+            <span style="font-size:30px;cursor:pointer; margin-right: 50px;" onclick="openNav()"
+                  class="w-100 text-lg-end position-absolute">&#9776;</span>
+            <div id="mySidenav" class="sidenav text-nowrap">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                <a href="#">Home</a>
+                <a href="#">About Us</a>
+                <a href="#">Our Menu</a>
+                <a href="#">Reserve A Table</a>
+                <a href="#">Contact</a>
+                @if (User.Identity.IsAuthenticated)
+                {
+                    <a asp-controller="Dashboard" asp-action="Index" asp-area="Manage">Admin</a>
+                    <a asp-controller="Auth" asp-action="SignOut" asp-area="Manage">Log out</a>
+                }
+                else
+                {
+                    <a asp-controller="Auth" asp-action="Login" asp-area="Manage">Login</a>
+                }
+            </div>
+        </nav>
+        <header>
+            <div class="d-flex flex-column align-items-sm-center justify-content-sm-center">
+                <h1 style="color: cornsilk;">Welcome to Meal</h1>
+                <a href="#" class="btn btn-outline-light">Reserve A Table</a>
+            </div>
+        </header>
+    </div>
+
+    <section style="padding-top: 200px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-4">
+                    <img width="400" height="400" src="~/assets/images/ximg_1.jpg.pagespeed.ic.L60-aVe_WJ.webp" alt="">
+                </div>
+                <div class="col-sm-4">
+                    <div class="text-lg-center pt-5" style="line-height: 45px;">
+                        <p>VEGIES</p>
+                        <h4>BEEF EMPANADAS</h4>
+                        <p class="fs-5">
+                            Separated they live in Bookmarksgrove right at the coast of the Semantics, a
+                            large language
+                            ocean.
+                        </p>
+                        <a href="">LEARN MORE →</a>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <img width="400" height="400" src="~/assets/images/ximg_2.jpg.pagespeed.ic.JczwRk7a5W.webp" alt="">
+                </div>
+                <div class="col-sm-4">
+                    <div class="text-lg-center pt-5" style="line-height: 45px;">
+                        <p>VEGIES</p>
+                        <h4>BEEF EMPANADAS</h4>
+                        <p class="fs-5">
+                            Separated they live in Bookmarksgrove right at the coast of the Semantics, a
+                            large language
+                            ocean.
+                        </p>
+                        <a href="">LEARN MORE →</a>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <img width="400" height="400" src="~/assets/images/ximg_3.jpg.pagespeed.ic.PFMzUZS3Jy.webp" alt="">
+                </div>
+                <div class="col-sm-4">
+                    <div class="text-lg-center pt-5" style="line-height: 45px;">
+                        <p>VEGIES</p>
+
+                        <h4>BEEF EMPANADAS</h4>
+                        <p class="fs-5">
+                            Separated they live in Bookmarksgrove right at the coast of the Semantics, a
+                            large language
+                            ocean.
+                        </p>
+                        <a href="">LEARN MORE →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="about" style="padding-top: 200px;">
+        <div class="d-flex flex-column justify-content-lg-center align-items-lg-center container"
+             style="line-height: 45px;">
+            <h2 style="font-size: 40px;">The Restaurant</h2>
+            <div class="w-50">
+                <p style="font-size: 20px;">
+                    Far far away, behind the word mountains, far from the countries Vokalia and
+                    Consonantia, there live the
+                    blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large
+                    language
+                    ocean.
+
+                    It is a paradisematic country, in which roasted parts of sentences fly into your mouth.
+                </p>
+            </div>
+        </div>
+        <div>
+            <img src="~/assets/images/xbg_hero.png.pagespeed.ic.amM03QbRMh.webp" alt="">
+        </div>
+    </section>
+    <section style="padding-top: 150px;">
+        <div class="container">
+            <h2 style="font-size: 40px; text-align: center;">
+                Meet The Chefs
+            </h2>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="d-flex flex-column justify-content-lg-center align-items-lg-center">
+                        <img width="200" height="200" style="border-radius: 50%;"
+                             src="~/assets/images/xchef_1.jpg.pagespeed.ic.TwytzGtMxF.webp" alt="">
+                        <h2>Daniel Graham</h2>
+                        <p>MASTER CHEF</p>
+                        <div class="w-75">
+                            <p class="text-center" style="line-height: 40px; font-size: 20px;">
+                                Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
+                                there
+                                live the blind texts. Separated they live in Bookmarksgrove right at the coast of the
+                                Semantics,
+                                a large language ocean.
+
+                                Separated they live in Bookmarksgrove right at the coast of the Semantics, a large
+                                language
+                                ocean. It is a paradisematic country.
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="d-flex flex-column justify-content-lg-center align-items-lg-center">
+                        <img width="200" height="200" style="border-radius: 50%;"
+                             src="~/assets/images/xchef_2.jpg.pagespeed.ic.q0laOXhQ82.webp" alt="">
+                        <h2>Daniel Graham</h2>
+                        <p>MASTER CHEF</p>
+                        <div class="w-75">
+                            <p class="text-center" style="line-height: 40px; font-size: 20px;">
+                                Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
+                                there
+                                live the blind texts. Separated they live in Bookmarksgrove right at the coast of the
+                                Semantics,
+                                a large language ocean.
+
+                                Separated they live in Bookmarksgrove right at the coast of the Semantics, a large
+                                language
+                                ocean. It is a paradisematic country.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="#menu" style="padding-top: 150px;">
+        <h2 style="font-size: 40px; " class="text-sm-center">Menu</h2>
+        <p style="font-size: 20px; color: rgb(133, 133, 133);" class="text-sm-center">
+            Free Website Template For
+            Restaurants Made by Colorlib
+        </p>
+        <div class="d-flex justify-content-lg-center pt-5 pb-5">
+            <ul class="nav site-tab-nav">
+                @foreach (var item in Model.Categories)
+                {
+                    <li class="nav-item btncar" style="cursor:pointer;" data-id="@item.Id">
+                        <a class="nav-link " aria-selected="true">@item.Name</a>
+                    </li>
+                }
+            </ul>
+        </div>
+        <div class="d-flex flex-column justify-content-lg-center align-items-lg-center">
+            @foreach (var item in Model.Menus)
+            {
+                <div class="container w-100 cat-img pt-2"  data-target="@item.CategoryId">
+                    <div class="d-flex gap-5">
+                        <img width=100 src="~/assets/images/@item.Image" alt="Image">
+                        <div class="price order-2 d-flex justify-content-lg-end w-100">
+                            <strong>$@item.Price</strong>
+                        </div>
+                        <div class="d-flex flex-column">
+                            <h3><a href="#">@item.Name</a></h3>
+                            <p>
+                                @item.Descriprion
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </section>
+    <section id="#otherservices" style="padding-top: 150px;">
+        <h2 style="font-size: 40px; " class="text-sm-center">Other Services</h2>
+        <p style="font-size: 20px; color: rgb(133, 133, 133);" class="text-sm-center">
+            Free Website Template For
+            Restaurants Made by Colorlib
+        </p>
+        <div class="container pt-5">
+            <div class="row">
+                <div class="col-sm-4 text-sm-center">
+                    <i>ICON</i>
+                    <div class="text-uppercase" style="line-height: 35px;">
+                        <small class="fs-5">Quality Cuisine</small>
+                        <p style="font-size: 17px; color: rgb(133, 133, 133); ">
+                            Far far away, behind the
+                            word mountains,
+                            far from the countries
+                            Vokalia and
+                            Consonantia,
+                            there live the blind texts.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-sm-4 text-sm-center">
+                    <i>ICON</i>
+                    <div class="text-uppercase" style="line-height: 35px;">
+                        <small class="fs-5">Quality Cuisine</small>
+                        <p style="font-size: 17px; color: rgb(133, 133, 133); ">
+                            Far far away, behind the
+                            word mountains,
+                            far from the countries
+                            Vokalia and
+                            Consonantia,
+                            there live the blind texts.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-sm-4 text-sm-center">
+                    <i>ICON</i>
+                    <div class="text-uppercase" style="line-height: 35px;">
+                        <small class="fs-5">Quality Cuisine</small>
+                        <p style="font-size: 17px; color: rgb(133, 133, 133); ">
+                            Far far away, behind the
+                            word mountains,
+                            far from the countries
+                            Vokalia and
+                            Consonantia,
+                            there live the blind texts.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-sm-4 text-sm-center pt-5">
+                    <i>ICON</i>
+                    <div class="text-uppercase" style="line-height: 35px;">
+                        <small class="fs-5">Quality Cuisine</small>
+                        <p style="font-size: 17px; color: rgb(133, 133, 133); ">
+                            Far far away, behind the
+                            word mountains,
+                            far from the countries
+                            Vokalia and
+                            Consonantia,
+                            there live the blind texts.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-sm-4 text-sm-center pt-5">
+                    <i>ICON</i>
+                    <div class="text-uppercase" style="line-height: 35px;">
+                        <small class="fs-5">Quality Cuisine</small>
+                        <p style="font-size: 17px; color: rgb(133, 133, 133); ">
+                            Far far away, behind the
+                            word mountains,
+                            far from the countries
+                            Vokalia and
+                            Consonantia,
+                            there live the blind texts.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-sm-4 text-sm-center pt-5">
+                    <i>ICON</i>
+                    <div class="text-uppercase" style="line-height: 35px;">
+                        <small class="fs-5">Quality Cuisine</small>
+                        <p style="font-size: 17px; color: rgb(133, 133, 133); ">
+                            Far far away, behind the
+                            word mountains,
+                            far from the countries
+                            Vokalia and
+                            Consonantia,
+                            there live the blind texts.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="#reservation" style="padding-top: 150px;">
+        <h2 style="font-size: 40px; " class="text-sm-center">Reservation</h2>
+        <p style="font-size: 20px; color: rgb(133, 133, 133);" class="text-sm-center">
+            Free Website Template For
+            Restaurants Made by Colorlib
+        </p>
+        <div class="container">
+            <div class="d-flex justify-content-sm-center">
+                <form action="post">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <label for="" class="form-label"
+                                   style="color: rgb(133, 133, 133); font-size: 20px;">Name</label>
+                            <input type="text" class="form-control" style="border: 1px solid rgb(184, 184, 184);">
+                        </div>
+                        <div class="col-sm-4">
+                            <label for="" class="form-label"
+                                   style="color: rgb(133, 133, 133); font-size: 20px;">Email</label>
+                            <input type="email" class="form-control" style="border: 1px solid rgb(184, 184, 184);">
+                        </div>
+                        <div class="col-sm-4">
+                            <label for="" class="form-label"
+                                   style="color: rgb(133, 133, 133); font-size: 20px;">Phone</label>
+                            <input type="number" class="form-control" style="border: 1px solid rgb(184, 184, 184);">
+                        </div>
+                        <div class="col-sm-4">
+                            <label for="" class="form-select-lg"
+                                   style="color: rgb(133, 133, 133); font-size: 20px;">
+                                Number
+                                of Persons
+                            </label>
+                            <select class="form-select">
+                                <option selected disabled>Open this select menu</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-4">
+                            <label for="" class="form-label"
+                                   style="color: rgb(133, 133, 133); font-size: 20px;">Date</label>
+                            <input type="date" class="form-control" style="border: 1px solid rgb(184, 184, 184);">
+                        </div>
+                        <div class="col-sm-4">
+                            <label for="" class="form-label"
+                                   style="color: rgb(133, 133, 133); font-size: 20px;">Time</label>
+                            <input type="time" class="form-control" style="border: 1px solid rgb(184, 184, 184);">
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-sm-center pt-5">
+                        <button class="btn btn-outline-warning">RESERVE NOW</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+    <section id="#getintouch" style="padding-top: 150px; padding-bottom: 50px;">
+        <h2 style="font-size: 40px; " class="text-sm-center">Other Services</h2>
+        <div class="container">
+            <div class="d-flex justify-content-sm-center">
+                <form action="post">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <label for="" class="form-label"
+                                   style="color: rgb(133, 133, 133); font-size: 20px;">Name</label>
+                            <input type="text" class="form-control" style="border: 1px solid rgb(184, 184, 184);">
+                        </div>
+                        <div class="col-sm-4">
+                            <label for="" class="form-label"
+                                   style="color: rgb(133, 133, 133); font-size: 20px;">Email</label>
+                            <input type="email" class="form-control" style="border: 1px solid rgb(184, 184, 184);">
+                        </div>
+                        <div class="col-sm-4">
+                            <label for="" class="form-label"
+                                   style="color: rgb(133, 133, 133); font-size: 20px;">Phone</label>
+                            <input type="number" class="form-control" style="border: 1px solid rgb(184, 184, 184);">
+                        </div>
+                        <div class="col-sm-12">
+                            <label for="" class="form-label"
+                                   style="color: rgb(133, 133, 133); font-size: 20px;">Message</label>
+                            <textarea type="number" class="form-control" style="border: 1px solid rgb(184, 184, 184);"
+                                      rows="7"></textarea>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-sm-center pt-5">
+                        c
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <div class="mapouter">
+        <div class="gmap_canvas">
+            <iframe style="width: 100%;" height="500" id="gmap_canvas"
+                    src="https://maps.google.com/maps?q=baku&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0"
+                    scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://123movies-to.org"></a><br>
+            <style>
+                .mapouter {
+                    position: relative;
+                    text-align: right;
+                    height: 500px;
+                    width: 100%;
+                }
+            </style><a href="https://www.embedgooglemap.net">embedgooglemap.net</a>
+            <style>
+                .gmap_canvas {
+                    overflow: hidden;
+                    background: none !important;
+                    height: 500px;
+                    width: 100%;
+                }
+            </style>
+        </div>
+    </div>
+    <footer class="ftco-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-5">
+                    <div class="footer-widget">
+                        <h3 class="mb-4">About Meal</h3>
+                        <p>
+                            The Big Oxmox advised her not to do so, because there were thousands of bad Commas, wild
+                            Question Marks and devious Semikoli, but the Little Blind Text didn’t listen.
+                        </p>
+                        <p> <button class="btn btn-outline-warning">Read More</button></p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-5">
+                    <div class="footer-widget">
+                        <h3 class="mb-4">Lunch Service</h3>
+                        <p>Booking from 12:00pm — 1:30pm</p>
+                        <h3 class="mb-4">Dinner Service</h3>
+                        <p>Everyday: <br> Booking from 6:00pm — 9:00pm</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="footer-widget">
+                        <h3 class="mb-4">Follow Along</h3>
+                        <ul class="list-unstyled social">
+                            <li><a href="#"><span class="fa fa-tripadvisor"></span></a></li>
+                            <li><a href="#"><span class="fa fa-twitter"></span></a></li>
+                            <li><a href="#"><span class="fa fa-facebook"></span></a></li>
+                            <li><a href="#"><span class="fa fa-instagram"></span></a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-widget">
+                        <h3 class="mb-4">Newsletter</h3>
+                        <form action="#" class="ftco-footer-newsletter">
+                            <div class="form-group">
+                                <button class="button"><span class="fa fa-envelope"></span></button>
+                                <input type="email" class="form-control" placeholder="Enter Email">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="row pt-5">
+                <div class="col-md-12 text-center">
+                    <p>
+                        Copyright ©
+                        <script>document.write(new Date().getFullYear());</script> All rights reserved <i class="fa fa-heart text-danger" aria-hidden="true"></i> by <a href="https://colorlib.com"
+                                                                                                                                                                        target="_blank">Asgar Babayev</a>
+
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="~/assets/js/main.js"></script>
+</body>
+
+</html>
+
